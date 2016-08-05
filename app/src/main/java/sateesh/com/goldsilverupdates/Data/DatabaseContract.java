@@ -34,7 +34,7 @@ public class DatabaseContract {
         public static final String TABLE_NAME = "CityInfo";
 
         public static final String _ID = "_id";
-        //        public static final String COLUMN_S_NO = "SNo";
+        public static final String COLUMN_S_NO = "SNo";
         public static final String COLUMN_MODIFIED_DATETIME = "ModifiedDateTime";
         public static final String COLUMN_CITY_NAME = "CityName";
     }

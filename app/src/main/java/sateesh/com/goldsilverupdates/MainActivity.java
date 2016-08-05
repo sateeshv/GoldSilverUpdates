@@ -29,6 +29,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         FetchSheetTask task = null;
+        FetchSheetTask_City city_task = null;
+
+        try {
+            city_task = new FetchSheetTask_City(getApplicationContext());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        city_task.execute();
+
         try {
             task = new FetchSheetTask(getApplicationContext());
         } catch (IOException e) {

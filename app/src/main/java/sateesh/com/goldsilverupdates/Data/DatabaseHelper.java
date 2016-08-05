@@ -35,9 +35,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         final String CREATE_CITY_INFO_TABLE = "CREATE TABLE " + DatabaseContract.CityInfo.TABLE_NAME +
                 "( " + DatabaseContract.CityInfo._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-//                DatabaseContract.CityInfo.COLUMN_S_NO + " INTEGER NOT NULL, " +
+                DatabaseContract.CityInfo.COLUMN_S_NO + " INTEGER NOT NULL, " +
                 DatabaseContract.CityInfo.COLUMN_MODIFIED_DATETIME + " TEXT NOT NULL, " +
-                DatabaseContract.CityInfo.COLUMN_CITY_NAME + "  TEXT UNIQUE NOT NULL " +
+                DatabaseContract.CityInfo.COLUMN_CITY_NAME + "  TEXT UNIQUE NOT NULL, " +
+                " UNIQUE (" + DatabaseContract.CityInfo.COLUMN_S_NO + ") ON CONFLICT REPLACE " +
                 ");";
 
         db.execSQL(CREATE_PRICE_INFO_TABLE);

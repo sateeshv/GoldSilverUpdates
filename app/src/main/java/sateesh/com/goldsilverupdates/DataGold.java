@@ -51,6 +51,7 @@ public class DataGold extends Fragment implements LoaderManager.LoaderCallbacks<
 
         Uri city_uri = Uri.withAppendedPath(DatabaseContract.CityInfo.CONTENT_URI, "13");
         Cursor cityQuery = getActivity().getContentResolver().query(city_uri, null, null, null, null);
+        cityQuery.moveToFirst();
         Log.v("Sateesh: ", "Spinner items in cursor: " + DatabaseUtils.dumpCursorToString(cityQuery));
 
         citySpinnerAdapter = new SimpleCursorAdapter(getContext(), R.layout.city_spinner, cityQuery, fromColumns, toColumns, 0);

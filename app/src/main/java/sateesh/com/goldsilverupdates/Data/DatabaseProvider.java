@@ -141,7 +141,7 @@ public class DatabaseProvider extends ContentProvider {
                 break;
 
             case QUERY_CITY_LAST_RECORD:
-                cursorData = databaseHelper.getReadableDatabase().query(DatabaseContract.CityInfo.TABLE_NAME, projection, selection, selectionArgs, sortOrder, null, DatabaseContract.CityInfo.COLUMN_MODIFIED_DATETIME + " DESC ", " 1");
+                cursorData = databaseHelper.getReadableDatabase().query(DatabaseContract.CityInfo.TABLE_NAME, projection, selection, selectionArgs, sortOrder, null, DatabaseContract.CityInfo.COLUMN_S_NO + " DESC ", " 1");
                 cursorData.setNotificationUri(getContext().getContentResolver(), uri);
                 break;
 

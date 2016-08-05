@@ -47,7 +47,7 @@ public class GoldPriceCursorAdapter extends CursorAdapter {
 
         String rawDate = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_DATE));
         Log.v("Sateesh", "*** format is: " +rawDate);
-        String formattedDate = rawDate.split("-")[0] + " - " + rawDate.split("-")[1];
+        String formattedDate = rawDate.split("-")[2] + " - " + rawDate.split("-")[1];
         date.setText(formattedDate);
 //        ViewHolder.rollNo.setText("");
 
