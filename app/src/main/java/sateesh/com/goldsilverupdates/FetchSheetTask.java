@@ -82,8 +82,8 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
         try {
             if (priceLastRecord != null && priceLastRecord.getCount() > 0) {
                 priceLastRecord.moveToFirst();
-                priceLastInsertedDate = priceLastRecord.getString(priceLastRecord.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_MODIFIED_DATETIME));
-                Log.v("Sateesh: ", "*** Last Inserted Date is: " + priceLastInsertedDate);
+                lastInserted_SNo = priceLastRecord.getString(priceLastRecord.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_S_No));
+                Log.v("Sateesh: ", "*** Last Inserted Date is: " + lastInserted_SNo);
 //                getPriceData_method(getLatestPriceData_URL, priceLastInsertedDate);
                 sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/od6/public/values?alt=json" + "&sq=sno>" + lastInserted_SNo;
             } else {

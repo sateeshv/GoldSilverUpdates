@@ -79,13 +79,13 @@ public class FetchSheetTask_City extends AsyncTask<Void, Void, Void> {
         String sheetURL = null;
         String KEY = "1edW69Md9E-qytnbHKdD9EgwrRSabwivsol7rw4tv_bI";
         Log.v("Sateesh: ", "*** are there any records: " + (cityLastRecord != null ? cityLastRecord.getCount() : 0));
-        String priceLastInsertedDate = null;
+//        String priceLastInsertedDate = null;
 
         try {
             if (cityLastRecord != null && cityLastRecord.getCount() > 0) {
                 cityLastRecord.moveToFirst();
-                priceLastInsertedDate = cityLastRecord.getString(cityLastRecord.getColumnIndexOrThrow(DatabaseContract.CityInfo.COLUMN_S_NO));
-                Log.v("Sateesh: ", "*** Last Inserted Date is: " + priceLastInsertedDate);
+                lastInserted_SNo = cityLastRecord.getString(cityLastRecord.getColumnIndexOrThrow(DatabaseContract.CityInfo.COLUMN_S_NO));
+                Log.v("Sateesh: ", "*** Last Inserted City S No is: " + lastInserted_SNo);
 //                getPriceData_method(getLatestPriceData_URL, priceLastInsertedDate);
                 sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/2/public/values?alt=json" + "&sq=sno>" + lastInserted_SNo;
             } else {

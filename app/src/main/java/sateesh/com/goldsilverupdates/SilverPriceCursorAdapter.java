@@ -47,7 +47,12 @@ public class SilverPriceCursorAdapter extends CursorAdapter {
 
         String rawDate = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_DATE));
 //        String formattedDate = rawDate.split("-")[2] + " - " + Month_Names[(Integer.parseInt(rawDate.split("-")[1])) - 1];
-        String formattedDate = rawDate.split("-")[0] + " - " + rawDate.split("-")[1];
+//        String formattedDate = rawDate.split("-")[0] + " - " + rawDate.split("-")[1];
+        String month_value_string = rawDate.split("-")[1];
+        int month_value = Integer.parseInt(month_value_string);
+        String month_name = Month_Names[(month_value-1)];
+//        String formattedDate = rawDate.split("-")[2] + " - " + rawDate.split("-")[1];
+        String formattedDate = rawDate.split("-")[2] + " - " + month_name;
         date.setText(formattedDate);
 //        ViewHolder.rollNo.setText("");
 
