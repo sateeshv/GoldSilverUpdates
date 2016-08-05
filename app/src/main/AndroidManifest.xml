@@ -28,7 +28,8 @@
         <activity android:name=".DataActivity" />
         <activity android:name=".DataSilver" />
         <activity android:name=".ChartsActivity" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".DrawActivity"></activity>
     </application>
 
 </manifest>
