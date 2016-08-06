@@ -23,6 +23,7 @@
             android:id="@+id/chart_gold_city_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_weight="1"
             android:gravity="center|left">
 
@@ -49,7 +50,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-
             android:text="@string/chart_type" />
 
         <Spinner

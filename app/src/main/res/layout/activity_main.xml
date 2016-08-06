@@ -1,75 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ecebf0"
     tools:context="sateesh.com.goldsilverupdates.MainActivity">
 
-    <TableLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <TableRow android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/gold_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:elevation="8dp"/>
 
-            <ImageButton
-                android:id="@+id/silver_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
-        </TableRow>
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
-        <TableRow
-            android:layout_marginTop="5dp"
-            android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gold And Silver"
+                    android:textSize="32sp"/>
 
-            <TextView
-                android:gravity="center"
-                android:text="@string/main_gold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Smart Updates"
+                    android:textSize="24sp"
+                    android:gravity="right"
+                    android:paddingRight="20dp"
+                    />
 
-            <TextView
-                android:gravity="center"
-                android:text="@string/main_silver" />
+            </LinearLayout>
 
-        </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
-        <TableRow
-            android:layout_marginTop="20dp"
-            android:gravity="center">
+                <Button
+                    android:id="@+id/gold_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border"
+                    android:text="Gold / Silver"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
-            <ImageButton
-                android:id="@+id/chart_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+                <Button
+                    android:id="@+id/chart_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border"
+                    android:text="Trends"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
-            <ImageButton
-                android:id="@+id/search_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
-        </TableRow>
+                <Button
+                    android:id="@+id/search_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border"
+                    android:text="Search"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
-        <TableRow
-            android:layout_marginTop="5dp"
-            android:gravity="center">
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
-            <TextView
-                android:gravity="center"
-                android:text="@string/main_trends" />
+    <!--<TableLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:gravity="center">-->
 
-            <TextView
-                android:gravity="center"
-                android:text="@string/main_search" />
+    <!--<TableRow android:gravity="center">-->
 
-        </TableRow>
-    </TableLayout>
-</RelativeLayout>
+    <!--<ImageButton-->
+    <!--android:id="@+id/gold_image"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:elevation="8dp"/>-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/silver_image"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp" />-->
+    <!--</TableRow>-->
+
+    <!--<TableRow-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:gravity="center">-->
+
+    <!--<TextView-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/main_gold" />-->
+
+    <!--<TextView-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/main_silver" />-->
+
+    <!--</TableRow>-->
+
+    <!--<TableRow-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:gravity="center">-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/chart_image"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp" />-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/search_image"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp" />-->
+    <!--</TableRow>-->
+
+    <!--<TableRow-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:gravity="center">-->
+
+    <!--<TextView-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/main_trends" />-->
+
+    <!--<TextView-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/main_search" />-->
+
+    <!--</TableRow>-->
+    <!--</TableLayout>-->
+</LinearLayout>

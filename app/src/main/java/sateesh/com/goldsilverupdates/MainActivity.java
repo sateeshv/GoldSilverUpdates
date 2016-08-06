@@ -1,30 +1,29 @@
 package sateesh.com.goldsilverupdates;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton gold_icon, silver_icon, chart_icon, search_icon;
+    Button gold_icon, chart_icon, search_icon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gold_icon = (ImageButton) findViewById(R.id.gold_image);
+        gold_icon = (Button) findViewById(R.id.gold_image);
         gold_icon.setOnClickListener(this);
 
-        silver_icon = (ImageButton) findViewById(R.id.silver_image);
-        silver_icon.setOnClickListener(this);
 
-        chart_icon = (ImageButton) findViewById(R.id.chart_image);
+        chart_icon = (Button) findViewById(R.id.chart_image);
         chart_icon.setOnClickListener(this);
 
-        search_icon = (ImageButton) findViewById(R.id.search_image);
+        search_icon = (Button) findViewById(R.id.search_image);
         search_icon.setOnClickListener(this);
 
 
@@ -55,11 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(data_gold);
                 break;
 
-            case R.id.silver_image:
-                Intent data_silver = new Intent(MainActivity.this, DataSilver.class);
-                startActivity(data_silver);
-
-                break;
+//            case R.id.silver_image:
+//                Intent data_silver = new Intent(MainActivity.this, DataSilver.class);
+//                startActivity(data_silver);
+//
+//                break;
 
             case R.id.chart_image:
                 Intent charts = new Intent(MainActivity.this, ChartsActivity.class);
