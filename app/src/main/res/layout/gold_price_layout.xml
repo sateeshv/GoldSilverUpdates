@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:background="#ecebf0"
+    android:layout_height="30dp"
     android:orientation="horizontal">
 
     <TextView
         android:id="@+id/text0"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/redborder"
+
         android:gravity="center"
         android:text="Text 01" />
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/redborder"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/redborder"
         android:gravity="center"
         android:text="Text 01" />
 
     <TextView
         android:id="@+id/text2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/redborder"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/redborder"
         android:gravity="center"
         android:text="Text 02" />
 
     <ImageView
         android:id="@+id/text3"
         android:layout_width="0dp"
-        android:layout_height="25dp"
-        android:background="@drawable/redborder"
+        android:layout_height="match_parent"
+        android:padding="5dp"
         android:layout_weight="1"
+        android:background="@drawable/redborder"
         android:gravity="center"
         android:text="Text 03" />
 </LinearLayout>
