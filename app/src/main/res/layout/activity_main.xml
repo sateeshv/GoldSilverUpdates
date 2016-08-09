@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@drawable/border"
+                    android:background="@drawable/redbackground"
                     android:text="Gold / Silver"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@drawable/border"
+                    android:background="@drawable/redbackground"
                     android:text="Trends"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -78,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@drawable/border"
+                    android:background="@drawable/redbackground"
                     android:text="Search"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
