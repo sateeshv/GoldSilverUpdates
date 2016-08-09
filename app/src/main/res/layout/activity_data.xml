@@ -13,6 +13,24 @@
     android:orientation="vertical"
     tools:context="sateesh.com.goldsilverupdates.DataActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Last 7 Days"
+            android:textSize="28sp" />
+    </LinearLayout>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tabbar"
         android:layout_width="match_parent"
