@@ -1,5 +1,6 @@
 package sateesh.com.goldsilverupdates;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.Locale;
 
@@ -16,11 +19,22 @@ public class DataActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    ImageView home_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
+
+        home_data = (ImageView) findViewById(R.id.home_data);
+        home_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(DataActivity.this, MainActivity.class);
+                startActivity(home);
+                finish();
+                }
+        });
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.

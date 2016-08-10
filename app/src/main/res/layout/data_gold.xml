@@ -43,7 +43,6 @@
         <TextView
             android:layout_width="20dp"
             android:layout_height="match_parent"
-
             android:gravity="center"
             android:visibility="visible"
             android:background="@drawable/dropdwon"/>

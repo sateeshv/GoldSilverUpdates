@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.gold_image:
                 Intent data_gold = new Intent(MainActivity.this, DataActivity.class);
                 startActivity(data_gold);
+                finish();
                 break;
 
 //            case R.id.silver_image:
@@ -63,11 +64,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.chart_image:
                 Intent charts = new Intent(MainActivity.this, ChartsActivity.class);
                 startActivity(charts);
+                finish();
                 break;
 
             case R.id.search_image:
                 Intent search = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(search);
+                finish();
                 break;
 
         }
