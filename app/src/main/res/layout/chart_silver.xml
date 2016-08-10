@@ -5,75 +5,97 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/redview"
             android:gravity="center"
-
-            android:text="@string/chart_city" />
+            android:textColor="#FFFFFF"
+            android:text="@string/chart_city"  />
 
         <Spinner
             android:id="@+id/chart_silver_city_spinner"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center|left">
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:gravity="center|left"
+            android:dropDownWidth="fill_parent"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/redborder"
+            android:padding="1dp">
 
         </Spinner>
 
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="20dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:gravity="center"
-            android:visibility="invisible" />
+            android:visibility="visible"
+            android:background="@drawable/dropdwon" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/redview"
             android:gravity="center"
-
+            android:textColor="#FFFFFF"
             android:text="@string/chart_type" />
 
         <Spinner
             android:id="@+id/chart_silver_duration_spinner"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:dropDownWidth="fill_parent"
+            android:spinnerMode="dropdown"
             android:entries="@array/chart_arrays"
-            android:gravity="center|left">
+            android:background="@drawable/redborder"
+            android:padding="1dp"
+            android:gravity="center|left"
+            >
 
         </Spinner>
 
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/dropdwon"/>
+
         <Button
             android:id="@+id/chart_silver_display_button"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:background="@drawable/redbackground"
+            android:layout_marginLeft="5dp"
+            android:textColor="#FFFFFF"
             android:text="@string/chart_display" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        >
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/chart_silver"
