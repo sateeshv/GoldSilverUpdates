@@ -43,7 +43,7 @@
         <item>One Year</item>
     </string-array>
 
-    <string name="chart_display">display</string>
+    <string name="chart_display">show</string>
 
     <string name="ok">OK</string>
     <string name="yes">YES</string>

@@ -57,7 +57,7 @@ public class DrawActivity extends AppCompatActivity implements OnChartValueSelec
 
         // no description text
         mChart.setDescription("");
-        mChart.setNoDataTextDescription("You need to provide data for the chart.");
+        mChart.setNoDataTextDescription("Click on SHOW Button");
 
         // enable touch gestures
         mChart.setTouchEnabled(true);

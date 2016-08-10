@@ -125,7 +125,7 @@ public class ChartSilver extends Fragment implements OnChartValueSelectedListene
         mChart = (LineChart) v.findViewById(R.id.chart_silver);
 
         mChart.setDescription("");
-        mChart.setNoDataTextDescription("You need to provide data for the chart.");
+        mChart.setNoDataTextDescription("Click on SHOW Button");
 
         // enable touch gestures
         mChart.setTouchEnabled(true);
