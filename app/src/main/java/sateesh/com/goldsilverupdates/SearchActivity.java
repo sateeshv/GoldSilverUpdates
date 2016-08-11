@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -37,6 +39,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     Spinner citySpinner;
     ListView listView;
     LinearLayout search_prams_titles;
+    ImageView home_search;
 
     String[] cityFilter;
 
@@ -44,6 +47,16 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        home_search = (ImageView) findViewById(R.id.home_search);
+        home_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(SearchActivity.this, MainActivity.class);
+                startActivity(home);
+                finish();
+            }
+        });
 
         selectDate_button = (Button) findViewById(R.id.search_date_button);
         selectDate_button.setOnClickListener(this);

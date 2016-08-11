@@ -42,6 +42,7 @@ public class SearchPriceCursorAdapter extends CursorAdapter {
         TextView   city_text = (TextView) view.findViewById(R.id.text1);
         TextView   gold_1_gram_text = (TextView) view.findViewById(R.id.text2);
         TextView silver_1_gram_text = (TextView) view.findViewById(R.id.text3);
+        TextView gold_8_gram_text = (TextView) view.findViewById(R.id.text4);
 
         String rawDate = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_DATE));
 //        String formattedDate = rawDate.split("-")[2] + " - " + Month_Names[(Integer.parseInt(rawDate.split("-")[1]))-1];
@@ -57,6 +58,9 @@ public class SearchPriceCursorAdapter extends CursorAdapter {
 
         int gold_1_gram = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_GOLD_1_GM));
         gold_1_gram_text.setText(String.valueOf(gold_1_gram));
+
+        int gold_8_grams = gold_1_gram * 8;
+        gold_8_gram_text.setText(String.valueOf(gold_8_grams));
 
         int silver_1_gram = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_SILVER_1_GM));
         silver_1_gram_text.setText(String.valueOf(silver_1_gram));

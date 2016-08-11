@@ -2,39 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
     android:gravity="center|left"
+    android:background="@drawable/redborder"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/text0"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center"
+        android:gravity="left"
+        android:padding="5dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/redborder"
         android:text="Text 01" />
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center"
+        android:gravity="left"
+        android:padding="5dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/redborder"
         android:text="Text 01" />
 
     <TextView
         android:id="@+id/text2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/redborder"
+        android:gravity="left"
+        android:paddingLeft="15dp"
         android:text="Text 02" />
 
     <TextView
-        android:id="@+id/text3"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:id="@+id/text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
         android:layout_weight="1"
-        android:gravity="center"
+        android:gravity="left"
+        android:paddingLeft="15dp"
+        android:background="@drawable/redborder"
+        android:text="Text 03" />
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:paddingLeft="15dp"
+        android:background="@drawable/redborder"
         android:text="Text 03" />
 
 </LinearLayout>

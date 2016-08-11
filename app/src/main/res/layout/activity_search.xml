@@ -3,79 +3,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ecebf0"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="sateesh.com.goldsilverupdates.SearchActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/home_search"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Price Search"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:background="@drawable/redview"
             android:gravity="center"
-            android:paddingLeft="12dp"
-            android:text="@string/search_text_date" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/search_text_date"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/search_date_text_view"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/redborder"
             android:entries="@array/city_arrays"
             android:gravity="center|left"
-            android:hint="@string/search_hint_date" />
+            android:hint="@string/search_hint_date"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#000000" />
 
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/dropdwon"
+            android:gravity="center" />
 
         <Button
             android:id="@+id/search_date_button"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/redbackground"
             android:gravity="center"
-            android:text="@string/search_button_date" />
+            android:text="@string/search_button_date"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:background="@drawable/redview"
             android:gravity="center"
-            android:text="@string/chart_city" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/chart_city"
+            android:textColor="#FFFFFF" />
 
         <Spinner
             android:id="@+id/search_city_spinner"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center|left">
+            android:background="@drawable/redborder"
+
+            android:dropDownWidth="fill_parent"
+            android:gravity="center|left"
+            android:padding="1dp"
+            android:paddingLeft="20dp"
+            android:spinnerMode="dropdown">
 
         </Spinner>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/dropdwon"
+            android:gravity="center" />
 
 
         <Button
             android:id="@+id/search_search_button"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/search_button" />
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/redbackground"
+            android:text="@string/search_button"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <TextView
@@ -83,61 +133,86 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="" />
+        android:text=""
+        android:textColor="#DC574E" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:background="@drawable/redborder"
         android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/search_params"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/redview"
             android:layout_weight="1"
             android:gravity="center|right"
             android:orientation="vertical"
-            android:paddingRight="20dp"
             android:visibility="gone">
 
             <TextView
                 android:id="@+id/text0"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Text 01" />
+                android:background="@drawable/redview"
+                android:layout_margin="5dp"
+                android:gravity="center|left"
+                android:text="Date"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/text1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Text 01" />
+                android:layout_margin="5dp"
+                android:background="@drawable/redview"
+                android:gravity="center|left"
+                android:text="City"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/text2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Text 02" />
+                android:layout_margin="5dp"
+                android:background="@drawable/redview"
+                android:gravity="center|left"
+                android:text="Gold 1 gram"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/redview"
+                android:gravity="center|left"
+                android:layout_margin="5dp"
+                android:text="Gold 8 grams"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/text3"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Text 03" />
+                android:background="@drawable/redview"
+                android:gravity="center|left"
+                android:layout_margin="5dp"
+                android:text="Silver 1 gram"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <ListView
             android:id="@+id/search_list_items"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
             android:layout_weight="1" />
 
         <TextView
@@ -145,7 +220,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Nothing to show!"
+            android:text="No Data available for this date!"
+            android:textColor="#DC574E"
             android:visibility="gone" />
 
     </LinearLayout>

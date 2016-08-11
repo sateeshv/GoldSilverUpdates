@@ -90,7 +90,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/redbackground"
             android:layout_marginLeft="5dp"
-
             android:textColor="#FFFFFF"
             android:text="@string/chart_display" />
     </LinearLayout>
