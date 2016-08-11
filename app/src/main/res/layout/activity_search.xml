@@ -159,6 +159,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/redview"
                 android:layout_margin="5dp"
+                android:paddingLeft="15dp"
                 android:gravity="center|left"
                 android:text="Date"
                 android:textColor="#FFFFFF" />
@@ -167,6 +168,7 @@
                 android:id="@+id/text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:background="@drawable/redview"
@@ -176,6 +178,7 @@
 
             <TextView
                 android:id="@+id/text2"
+                android:paddingLeft="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -187,6 +190,7 @@
 
             <TextView
                 android:id="@+id/text4"
+                android:paddingLeft="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -201,6 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingLeft="15dp"
                 android:background="@drawable/redview"
                 android:gravity="center|left"
                 android:layout_margin="5dp"
@@ -210,7 +215,7 @@
 
         <ListView
             android:id="@+id/search_list_items"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:divider="@null"
             android:layout_weight="1" />

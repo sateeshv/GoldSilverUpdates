@@ -8,44 +8,40 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp"
             android:background="@drawable/redview"
             android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="@string/chart_city"
             android:textColor="#FFFFFF" />
-        
 
-            <Spinner
-                android:id="@+id/data_gold_city_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:gravity="center|left"
-                android:dropDownWidth="fill_parent"
-                android:spinnerMode="dropdown"
-                android:background="@drawable/redborder"
-                android:padding="1dp"
-                >
 
-            </Spinner>
+        <Spinner
+            android:id="@+id/data_gold_city_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redborder"
+            android:dropDownWidth="fill_parent"
+            android:gravity="center|left"
+            android:padding="1dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:spinnerMode="dropdown">
 
+        </Spinner>
 
 
         <TextView
             android:layout_width="20dp"
             android:layout_height="match_parent"
+            android:background="@drawable/dropdwon"
             android:gravity="center"
-            android:visibility="visible"
-            android:background="@drawable/dropdwon"/>
+            android:visibility="visible" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,59 +55,65 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:gravity="center"
-            android:text="@string/data_gold_date"
             android:background="@drawable/redview"
-            android:textColor="#FFFFFF"
-            android:textAllCaps="true" />
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/data_gold_date"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:gravity="center"
-            android:text="@string/data_gold_8grams"
             android:background="@drawable/redview"
-            android:textColor="#FFFFFF"
-            android:textAllCaps="true" />
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/data_gold_8grams"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/text2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:text="@string/data_gold_1grams"
             android:background="@drawable/redview"
-            android:textAllCaps="true" />
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/data_gold_1grams"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/text3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:paddingTop="5dp"
-            android:textColor="#FFFFFF"
-            android:paddingBottom="5dp"
             android:background="@drawable/redview"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
             android:text="@string/data_gold_change"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/gold_list_items"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:divider="@null" />
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@null"
-        android:layout_weight="1" />
+        android:text="Price are for 22 CT. \n Price updates everyday at 12.30 PM" />
+
 
 </LinearLayout>
