@@ -224,11 +224,13 @@ public class FetchSheetTask_City extends AsyncTask<Void, Void, Void> {
                 Uri data_uri = Uri.withAppendedPath(DatabaseContract.CityInfo.CONTENT_URI, "1");
                 int insertedRecords = context.getContentResolver().bulkInsert(data_uri, dataArray);
                 Log.v("Sateesh: ", "*** MainActivity getAllData_method + Data Inserted Records: " + insertedRecords);
+                long endTime = System.currentTimeMillis();
+                Log.v("Sateesh: ", "*** City - Time taken to Check new Data Available " + (endTime - startTime));
             }
         } else {
             Log.v("Sateesh: ", "City - NO New Data Available");
             long endTime = System.currentTimeMillis();
-            Log.v("Sateesh: ", "*** Time taken to Check new Data Available ");
+            Log.v("Sateesh: ", "*** City - Time taken to Check new Data Available " + (endTime - startTime));
         }
 
 
