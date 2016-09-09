@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="sateesh.com.goldsilverupdates.DrawActivity">
+    tools:context="funcentric.com.gsupdates.DrawActivity">
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart1"

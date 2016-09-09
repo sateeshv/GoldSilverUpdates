@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates.Data;
+package funcentric.com.gsupdates.Data;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -89,7 +89,6 @@ public class DatabaseProvider extends ContentProvider {
             case QUERY_CITY_GOLD_7_DAYS:
                 cursorData = databaseHelper.getReadableDatabase().query(DatabaseContract.PriceInfo.TABLE_NAME, projection, selection, selectionArgs, sortOrder, null, DatabaseContract.PriceInfo.COLUMN_DATE + " DESC ", " 7");
                 cursorData.setNotificationUri(getContext().getContentResolver(), uri);
-
                 break;
 
             case QUERY_CITY_GOLD_LAST_30_DAYS:
@@ -151,6 +150,7 @@ public class DatabaseProvider extends ContentProvider {
                 Log.v("Sateesh: ", "*** RawQuery string is : " + query);
                 cursorData = databaseHelper.getReadableDatabase().rawQuery(query, selectionArgs);
                 cursorData.setNotificationUri(getContext().getContentResolver(), uri);
+                break;
         }
 
         return cursorData;

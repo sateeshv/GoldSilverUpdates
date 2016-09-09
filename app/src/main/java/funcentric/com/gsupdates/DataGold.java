@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.database.Cursor;
 import android.database.DatabaseUtils;
@@ -18,7 +18,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import sateesh.com.goldsilverupdates.Data.DatabaseContract;
+import funcentric.com.gsupdates.Data.DatabaseContract;
 
 /**
  * Created by Sateesh on 04-08-2016.

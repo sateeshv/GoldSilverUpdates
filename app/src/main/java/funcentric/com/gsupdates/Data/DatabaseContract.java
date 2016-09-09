@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates.Data;
+package funcentric.com.gsupdates.Data;
 
 import android.net.Uri;
 
@@ -7,7 +7,7 @@ import android.net.Uri;
  */
 public class DatabaseContract {
 
-    public static final String AUTHORITY = "sateesh.com.goldsilverupdates";
+    public static final String AUTHORITY = "funcentric.com.gsupdates";
     public static final Uri BASIC_URI = Uri.parse("content://" + AUTHORITY);
     public static final String PATH_PRICE_INFO = "PriceInfo";
     public static final String PATH_CITY_INFO = "CityInfo";

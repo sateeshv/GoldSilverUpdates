@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.database.Cursor;
 import android.database.DatabaseUtils;
@@ -18,7 +18,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import sateesh.com.goldsilverupdates.Data.DatabaseContract;
+import funcentric.com.gsupdates.Data.DatabaseContract;
 
 public class DataSilver extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final String ARG_SECTION_NUMBER = "section_number";

@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -25,7 +25,7 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-import sateesh.com.goldsilverupdates.Data.DatabaseContract;
+import funcentric.com.gsupdates.Data.DatabaseContract;
 
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener, LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -102,6 +102,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.search_search_button:
                 if (userSelectedDate != null) {
+                    emtpyDate = (TextView) findViewById(R.id.search_error_message);
+                    emtpyDate.setVisibility(View.INVISIBLE);
                     TextView selectedTextView = (TextView) findViewById(R.id.spinner_text_view); // You may need to replace android.R.id.text1 whatever your TextView label id is
                     userSelectedCity = selectedTextView.getText().toString();
 

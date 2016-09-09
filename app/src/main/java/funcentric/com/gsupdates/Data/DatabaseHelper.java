@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates.Data;
+package funcentric.com.gsupdates.Data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

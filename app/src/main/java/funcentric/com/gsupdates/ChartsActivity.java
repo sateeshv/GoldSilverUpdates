@@ -1,13 +1,13 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,25 +15,25 @@ import android.widget.ImageView;
 
 import java.util.Locale;
 
-public class DataActivity extends AppCompatActivity {
+public class ChartsActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    ImageView home_data;
+    ImageView home_chart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data);
+        setContentView(R.layout.activity_charts);
 
-        home_data = (ImageView) findViewById(R.id.home_data);
-        home_data.setOnClickListener(new View.OnClickListener() {
+        home_chart = (ImageView) findViewById(R.id.home_chart);
+        home_chart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(DataActivity.this, MainActivity.class);
+                Intent home = new Intent(ChartsActivity.this, MainActivity.class);
                 startActivity(home);
                 finish();
-                }
+            }
         });
 
         // Create the adapter that will return a fragment for each of the three
@@ -44,15 +44,13 @@ public class DataActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabbar);
         tabLayout.setupWithViewPager(mViewPager);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_data, menu);
+        getMenuInflater().inflate(R.menu.menu_charts, menu);
         return true;
     }
 
@@ -69,7 +67,9 @@ public class DataActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    } /**
+    }
+
+    /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
@@ -85,9 +85,9 @@ public class DataActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return DataGold.newInstance(position + 1);
+                    return ChartGold.newInstance(position + 1);
                 case 1:
-                    return DataSilver.newInstance(position + 1);
+                    return ChartSilver.newInstance(position + 1);
 
             }
             return null;
@@ -104,12 +104,13 @@ public class DataActivity extends AppCompatActivity {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.data_title_1).toUpperCase(l);
+                    return getString(R.string.chart_title_1).toUpperCase(l);
                 case 1:
-                    return getString(R.string.data_title_2).toUpperCase(l);
+                    return getString(R.string.chart_title_2).toUpperCase(l);
 
             }
             return null;
         }
     }
 }
+

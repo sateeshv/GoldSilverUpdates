@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.app.Dialog;
 import android.content.Context;

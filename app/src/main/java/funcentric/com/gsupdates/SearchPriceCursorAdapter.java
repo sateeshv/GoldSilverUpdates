@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import sateesh.com.goldsilverupdates.Data.DatabaseContract;
+import funcentric.com.gsupdates.Data.DatabaseContract;
 
 /**
  * Created by Sateesh on 05-08-2016.

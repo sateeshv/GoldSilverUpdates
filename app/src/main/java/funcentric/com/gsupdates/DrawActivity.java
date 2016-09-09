@@ -1,4 +1,4 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.database.Cursor;
 import android.graphics.Color;
@@ -25,7 +25,7 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import sateesh.com.goldsilverupdates.Data.DatabaseContract;
+import funcentric.com.gsupdates.Data.DatabaseContract;
 
 public class DrawActivity extends AppCompatActivity implements OnChartValueSelectedListener {
 

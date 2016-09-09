@@ -1,9 +1,10 @@
-package sateesh.com.goldsilverupdates;
+package funcentric.com.gsupdates;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -24,16 +25,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import sateesh.com.goldsilverupdates.Data.DatabaseContract;
+import funcentric.com.gsupdates.Data.DatabaseContract;
 
 /**
- * Created by Sateesh on 04-08-2016.
+ * Created by Sateesh on 05-08-2016.
  */
-public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
+public class FetchSheetTask_City extends AsyncTask<Void, Void, Void> {
     Context context;
     long startTime;
 
-    public FetchSheetTask(Context context) throws IOException {
+    public FetchSheetTask_City(Context context) throws IOException {
         this.context = context;
     }
 
@@ -66,30 +67,31 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
 //            Log.v("Sateesh: ", "*** cursor Index Out of Bound");
 //        }
 
-        Uri priceUri = Uri.withAppendedPath(DatabaseContract.PriceInfo.CONTENT_URI, "2");
-        // 2 Stands for last inserted S No
-        Log.v("Sateesh: ", "*** URI link is: " + priceUri);
-        Cursor priceLastRecord = context.getContentResolver().query(priceUri, null, null, null, null);
-        if (priceLastRecord != null) {
-            priceLastRecord.moveToFirst();
+        Uri CityUri = Uri.withAppendedPath(DatabaseContract.CityInfo.CONTENT_URI, "14");
+        // 14 Stands for last inserted S No
+        Log.v("Sateesh: ", "*** URI link is: " + CityUri);
+        Cursor cityLastRecord = context.getContentResolver().query(CityUri, null, null, null, null);
+        if (cityLastRecord != null) {
+            cityLastRecord.moveToFirst();
         }
+        Log.v("Sateesh: ", "cityLastRecord cursor is: " + DatabaseUtils.dumpCursorToString(cityLastRecord));
         String lastInserted_SNo = null;
         String sheetURL = null;
         String KEY = "1edW69Md9E-qytnbHKdD9EgwrRSabwivsol7rw4tv_bI";
-        Log.v("Sateesh: ", "*** are there any records: " + (priceLastRecord != null ? priceLastRecord.getCount() : 0));
-        String priceLastInsertedDate = null;
+        Log.v("Sateesh: ", "*** are there any records: " + (cityLastRecord != null ? cityLastRecord.getCount() : 0));
+//        String priceLastInsertedDate = null;
 
         try {
-            if (priceLastRecord != null && priceLastRecord.getCount() > 0) {
-                priceLastRecord.moveToFirst();
-                lastInserted_SNo = priceLastRecord.getString(priceLastRecord.getColumnIndexOrThrow(DatabaseContract.PriceInfo.COLUMN_S_No));
-                Log.v("Sateesh: ", "*** Last Inserted Date is: " + lastInserted_SNo);
+            if (cityLastRecord != null && cityLastRecord.getCount() > 0) {
+                cityLastRecord.moveToFirst();
+                lastInserted_SNo = cityLastRecord.getString(cityLastRecord.getColumnIndexOrThrow(DatabaseContract.CityInfo.COLUMN_S_NO));
+                Log.v("Sateesh: ", "*** Last Inserted City S No is: " + lastInserted_SNo);
 //                getPriceData_method(getLatestPriceData_URL, priceLastInsertedDate);
-                sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/od6/public/values?alt=json" + "&sq=sno>" + lastInserted_SNo;
+                sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/2/public/values?alt=json" + "&sq=sno>" + lastInserted_SNo;
             } else {
                 Log.v("Sateesh: ", "*** No insertions till Now");
 //                getPriceData_method(getAllPriceData_URL, "");
-                sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/od6/public/values?alt=json";
+                sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/2/public/values?alt=json";
 //                https://spreadsheets.google.com/feeds/list/1edW69Md9E-qytnbHKdD9EgwrRSabwivsol7rw4tv_bI/od6/public/values?alt=json
                 Log.v("Sateesh: ", "*** new Data sheet URL is: " + sheetURL);
 
@@ -98,6 +100,7 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
         } catch (CursorIndexOutOfBoundsException e) {
             Log.v("Sateesh: ", "*** cursor Index Out of Bound");
         }
+        cityLastRecord.close();
 
 
 //        String sheetURL = "https://spreadsheets.google.com/feeds/list/" + KEY + "/od6/public/values?alt=json";
@@ -166,15 +169,10 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
     private void getSheetDataFromJSON(String sheetString) throws JSONException {
 
         int numberOfRows;
-        String sNo, date, city, gold_22_ct_8_grams, gold_22_ct_1_gram, silver_1_gram, gold_change, silver_change;
+        String sNo, city;
         sNo = null;
-        date = null;
         city = null;
-        gold_22_ct_8_grams = null;
-        gold_22_ct_1_gram = null;
-        silver_1_gram = null;
-        gold_change = null;
-        silver_change = null;
+
 
         List<ContentValues> data = new ArrayList<ContentValues>();
 
@@ -185,7 +183,7 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
         String searchResultsValue = searchResultsObject.getString("$t");
         int value = Integer.parseInt(searchResultsValue);
         if (value > 0) {
-            Log.v("Sateesh: ", "New Data Available");
+            Log.v("Sateesh: ", "City New Data Available");
             JSONArray entry = feed.getJSONArray("entry");
 
             JSONObject searchTotalCount = feed.getJSONObject("openSearch$totalResults");
@@ -200,48 +198,19 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
                 JSONObject sNoObject = eachRow.getJSONObject("gsx$sno");
                 sNo = sNoObject.getString("$t");
 
-                JSONObject dateObject = eachRow.getJSONObject("gsx$date");
-                date = dateObject.getString("$t");
-
                 JSONObject cityObect = eachRow.getJSONObject("gsx$city");
                 city = cityObect.getString("$t");
 
-                JSONObject gold_22ct_8_gramsObject = eachRow.getJSONObject("gsx$gold22ct8grams");
-                gold_22_ct_8_grams = gold_22ct_8_gramsObject.getString("$t");
-
-                JSONObject gold_22ct_1_gramObject = eachRow.getJSONObject("gsx$gold22ct1gram");
-                gold_22_ct_1_gram = gold_22ct_1_gramObject.getString("$t");
-
-                JSONObject silver_1_gramObject = eachRow.getJSONObject("gsx$silver1gram");
-                silver_1_gram = silver_1_gramObject.getString("$t");
-
-                JSONObject gold_changeObject = eachRow.getJSONObject("gsx$goldchange");
-                gold_change = gold_changeObject.getString("$t");
-
-                JSONObject silver_changeObject = eachRow.getJSONObject("gsx$silverchange");
-                silver_change = silver_changeObject.getString("$t");
 
                 Log.v("Sateesh: - Data", "sNo Values are: " + sNo);
-                Log.v("Sateesh: - Data", "date Values are: " + date);
                 Log.v("Sateesh: - Data", "city Values are: " + city);
-                Log.v("Sateesh: - Data", "gold 22ct 8 gram Values are: " + gold_22_ct_8_grams);
-                Log.v("Sateesh: - Data", "gold 22 ct 1 gram Values are: " + gold_22_ct_1_gram);
-                Log.v("Sateesh: - Data", "silver 1 gram Values are: " + silver_1_gram);
-                Log.v("Sateesh: - Data", "gold change Values are: " + gold_change);
-                Log.v("Sateesh: - Data", "silver change Values are: " + silver_change);
 
                 String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
                 ContentValues values = new ContentValues();
-                values.put(DatabaseContract.PriceInfo.COLUMN_S_No, sNo);
-                values.put(DatabaseContract.PriceInfo.COLUMN_MODIFIED_DATETIME, timeStamp);
-                values.put(DatabaseContract.PriceInfo.COLUMN_DATE, date);
-                values.put(DatabaseContract.PriceInfo.COLUMN_CITY_NAME, city);
-                values.put(DatabaseContract.PriceInfo.COLUMN_GOLD_1_GM, gold_22_ct_1_gram);
-                values.put(DatabaseContract.PriceInfo.COLUMN_SILVER_1_GM, silver_1_gram);
-                values.put(DatabaseContract.PriceInfo.COLUMN_GOLD_CHANGE, gold_change);
-                values.put(DatabaseContract.PriceInfo.COLUMN_SILVER_CHANGE, silver_change);
-
+                values.put(DatabaseContract.CityInfo.COLUMN_S_NO, sNo);
+                values.put(DatabaseContract.CityInfo.COLUMN_MODIFIED_DATETIME, timeStamp);
+                values.put(DatabaseContract.CityInfo.COLUMN_CITY_NAME, city);
 
                 data.add(values);
 
@@ -253,18 +222,19 @@ public class FetchSheetTask extends AsyncTask<Void, Void, Void> {
                 ContentValues[] values = data.toArray(dataArray);
                 Log.v("Sateesh: ", "**** getAllData_method content Values data " + values);
 
-                Uri data_uri = Uri.withAppendedPath(DatabaseContract.PriceInfo.CONTENT_URI, "0");
+                Uri data_uri = Uri.withAppendedPath(DatabaseContract.CityInfo.CONTENT_URI, "1");
                 int insertedRecords = context.getContentResolver().bulkInsert(data_uri, dataArray);
                 Log.v("Sateesh: ", "*** MainActivity getAllData_method + Data Inserted Records: " + insertedRecords);
                 long endTime = System.currentTimeMillis();
-                Log.v("Sateesh: ", "*** Prices - Time taken to Check new Data Available " + (endTime - startTime));
+                Log.v("Sateesh: ", "*** City - Time taken to Check new Data Available " + (endTime - startTime));
             }
         } else {
-            Log.v("Sateesh: ", "NO New Data Available");
+            Log.v("Sateesh: ", "City - NO New Data Available");
             long endTime = System.currentTimeMillis();
-            Log.v("Sateesh: ", "*** Prices - Time taken to Check new Data Available " + (endTime - startTime));
+            Log.v("Sateesh: ", "*** City - Time taken to Check new Data Available " + (endTime - startTime));
         }
 
 
     }
 }
+

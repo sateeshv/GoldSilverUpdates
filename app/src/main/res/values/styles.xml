@@ -11,6 +11,10 @@
 
     </style>
 
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/my_spinner_text_color</item>
+    </style>
+
 
     <!--<style name="TransparentProgressDialog" parent="Theme.AppCompat.Dialog">-->
         <!--<item name="android:windowFrame">@null</item>-->
