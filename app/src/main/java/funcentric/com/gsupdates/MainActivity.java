@@ -3,25 +3,33 @@ package funcentric.com.gsupdates;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
 
+import funcentric.com.gsupdates.Network.InternetCheck;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button gold_icon, chart_icon, search_icon;
+    LinearLayout mainView;
 //    Button share_icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainView = (LinearLayout) findViewById(R.id.mainLayout);
         gold_icon = (Button) findViewById(R.id.gold_image);
         gold_icon.setOnClickListener(this);
 
@@ -41,6 +49,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (InternetCheck.isConnectingToInternet(this) == true) {
+
+        } else {
+            Log.v("Sateesh: ", "No Internet");
+//            LaunchNoInternet noInternet = new LaunchNoInternet();
+//            noInternet.show(getFragmentManager(), "LaunchNoInternet");
+            Snackbar snackbar = Snackbar.make(mainView, "Switch ON internet to fetch latest Prices \n ", Snackbar.LENGTH_LONG);
+            View snackbarView = snackbar.getView();
+            snackbarView.setBackgroundColor(Color.DKGRAY);
+            TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.RED);
+            snackbar.show();
+
+
+        }
+    }
 
     @Override
     public void onClick(View view) {
@@ -78,17 +106,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                break;
 
 
-
         }
     }
 
 
-    public class AsyncTask_ProgressDialog extends AsyncTask<Void, Void, Void>{
+    public class AsyncTask_ProgressDialog extends AsyncTask<Void, Void, Void> {
 
         Dialog pDialog;
         Context appContext;
 
-        public AsyncTask_ProgressDialog(Context con){
+        public AsyncTask_ProgressDialog(Context con) {
             appContext = con;
         }
 
