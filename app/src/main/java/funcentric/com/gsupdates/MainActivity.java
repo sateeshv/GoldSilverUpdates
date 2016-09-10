@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button gold_icon, chart_icon, search_icon;
     LinearLayout mainView;
-//    Button share_icon;
+    Button share_icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         search_icon = (Button) findViewById(R.id.search_image);
         search_icon.setOnClickListener(this);
 
-//        share_icon = (Button) findViewById(R.id.share_image);
-//        share_icon.setOnClickListener(this);
+        share_icon = (Button) findViewById(R.id.share_image);
+        share_icon.setOnClickListener(this);
 
 
         new AsyncTask_ProgressDialog(MainActivity.this).execute();
@@ -97,13 +97,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
 
-//            case R.id.share_image:
-//                Intent intent = new Intent(Intent.ACTION_SEND);
-//                intent.setType("text/plain");
-////                intent.setData(Uri.parse("market://details?id=com.triedge.ic"));
-//                intent.putExtra(Intent.EXTRA_TEXT, "Now you can check Gudur Gold & and Silver Prices in Mobile App. From this URL: \n https://play.google.com/store/apps/details?id=com.triedge.ic ");
-//                startActivity(intent);
-//                break;
+            case R.id.share_image:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+//                intent.setData(Uri.parse("market://details?id=com.triedge.ic"));
+                intent.putExtra(Intent.EXTRA_TEXT, "Now you can check Gudur Gold & and Silver Prices in Mobile App. From this URL: \n https://play.google.com/store/apps/details?id=funcentric.com.gsupdates ");
+                startActivity(intent);
+                break;
 
 
         }
