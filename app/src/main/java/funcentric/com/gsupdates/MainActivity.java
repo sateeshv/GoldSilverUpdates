@@ -101,7 +101,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
 //                intent.setData(Uri.parse("market://details?id=com.triedge.ic"));
-                intent.putExtra(Intent.EXTRA_TEXT, "Now you can check Gudur Gold & and Silver Prices in Mobile App. From this URL: \n https://play.google.com/store/apps/details?id=funcentric.com.gsupdates ");
+                //intent.putExtra(Intent.EXTRA_TEXT, "Now you can check Gudur Gold & and Silver Prices in Mobile App. From this URL: \n https://play.google.com/store/apps/details?id=funcentric.com.gsupdates ");
+                intent.putExtra(Intent.EXTRA_TEXT, " ఇపుడు గూడూరు లోని బంగారు మరియు వెండి (1 గ్రాము) ధరలు మీ ఫోన్  లోనే  చూసుకునే అవకాశం కలదు . ద  చేసుకొనవలసిన అప్లికేషన్ లింక్ : \n https://play.google.com/store/apps/details?id=funcentric.com.gsupdates ");
                 startActivity(intent);
                 break;
 
