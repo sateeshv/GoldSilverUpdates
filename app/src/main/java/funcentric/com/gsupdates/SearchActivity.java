@@ -31,7 +31,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     static String[] Month_Names = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
     TextView selectDate, emtpyDate;
-    String userSelectedDate, userSelectedCity;
+    static String userSelectedDate;
+            String userSelectedCity;
     Button selectDate_button, search_button;
     SearchPriceCursorAdapter cursorAdapter;
     SimpleCursorAdapter citySpinnerAdapter;
@@ -122,7 +123,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
-    public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {

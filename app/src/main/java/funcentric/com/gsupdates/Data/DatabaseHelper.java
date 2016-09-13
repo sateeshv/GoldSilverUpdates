@@ -9,6 +9,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
  * Created by Sateesh on 04-08-2016.
  */
 
+
 //public class DatabaseHelper extends SQLiteOpenHelper {
 public class DatabaseHelper extends SQLiteAssetHelper {
 
@@ -18,7 +19,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-//
+
 //    @Override
 //    public void onCreate(SQLiteDatabase db) {
 //
